@@ -32,13 +32,13 @@ export default function Invitation() {
         }`}
       >
         <div className="flex-1 p-4 bg-white/10 text-center ">
-          <p><b>Nhà Trai</b></p>
+          <p className="sm:text-lg md:text-2xl"><b>Nhà Trai</b></p>
           <p>Ông Lương Đình Tuân</p>
           <p>Bà Trịnh Thị Ngọc Anh</p>
           <p>Thôn 14, phường Tân Dân, Thanh Hóa</p>
         </div>
         <div className="flex-1 p-4 bg-white/10 text-center">
-          <p><b>Nhà Gái</b></p>
+          <p className="sm:text-lg md:text-2xl"><b>Nhà Gái</b></p>
           <p>Ông Lâm Ngọc Niêm</p>
           <p>Bà Lê Thị Mai</p>
           <p>TDP Hồng Kỳ, phường Ngọc Sơn, Thanh Hóa</p>
@@ -53,7 +53,7 @@ export default function Invitation() {
         }`}
       >
         <div className="flex-1 text-center">
-          <Image src="/images/couple-name.png" alt="Couple" width={300} height={300} />
+          <Image src="/images/welcome/emblem2.png" alt="Couple" width={300} height={300} />
         </div>
         <div className="flex-1 text-center md:text-left">
           <p>Kính Mời quý khách đến dự tiệc cưới của chúng tôi</p>
@@ -92,7 +92,7 @@ export default function Invitation() {
       </div>
 
       {/* Button */}
-      <div className="text-center text-md md:text-2xl mt-8">
+      <div className="text-center text-md md:text-2xl mt-10 mb-6">
         <button
           onClick={() =>
             document.getElementById("envelope")?.scrollIntoView({ behavior: "smooth" })
