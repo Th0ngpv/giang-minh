@@ -1,9 +1,10 @@
 import Hero from "@/app/components/hero";
 import Welcome from "@/app/components/Welcome";
 import Countdown from "@/app/components/countdown";
-import Envelope from "./components/envelope";
-import Gallery from "./components/gallery";
-import MusicPlayer from "./components/MusicPlayer";
+import Envelope from "@/app/components/envelope";
+import Gallery from "@/app/components/gallery";
+import MusicPlayer from "@/app/components/MusicPlayer";
+import AttendanceCounter from "@/app/components/AttendanceCounter";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Welcome />
       <Envelope />
       <Countdown weddingDate="2025-12-28T09:00:00" />
+      <AttendanceCounter />
       <Gallery />
     </main>
   );
