@@ -18,7 +18,7 @@ export default function Hero({ coupleName, date, location }: HeroProps) {
       className="relative h-screen flex flex-col items-center justify-center text-center"
     >
       <Image
-        src="/images/preWed/AOI_7809_Copy_1.jpg"
+        src="/images/hero-background.jpg"
         alt="Hero Background"
         fill
         className="absolute inset-0 w-full h-full object-cover z-0"
