@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import useInView from "@/app/hooks/useInView";
 
 export default function Invitation() {
-  // Separate in-view hooks for each row
   const { ref: row1Ref, isVisible: row1Visible } = useInView();
   const { ref: row2Ref, isVisible: row2Visible } = useInView();
   const { ref: row3Ref, isVisible: row3Visible } = useInView();
@@ -24,14 +23,13 @@ export default function Invitation() {
 
   return (
     <section className="relative py-5 px-4 max-w-6xl mx-auto flex flex-col gap-2 z-10 font-playfair">
-      {/* Row 1: Nhà Trai & Nhà Gái */}
+      {/* Row 1 */}
       <div
         ref={row1Ref}
-        className={`flex flex-col md:flex-row gap-2 sm:text-md md:text-xl ${
-          row1Visible ? "animate-fade-up" : "opacity-0"
-        }`}
+        className={`flex flex-col md:flex-row gap-2 sm:text-md md:text-xl ${row1Visible ? "animate-fade-up" : "opacity-0"
+          }`}
       >
-        <div className="flex-1 p-4 bg-white/10 text-center ">
+        <div className="flex-1 p-4 bg-white/10 text-center">
           <p className="sm:text-lg md:text-2xl"><b>Nhà Trai</b></p>
           <p>Ông Lương Đình Tuân</p>
           <p>Bà Trịnh Thị Ngọc Anh</p>
@@ -45,43 +43,50 @@ export default function Invitation() {
         </div>
       </div>
 
-      {/* Row 2: Image & Invitation Text */}
+      {/* Row 2 */}
       <div
         ref={row2Ref}
-        className={`flex flex-col gap-8 items-center sm:text-md md:text-xl ${
-          row2Visible ? "animate-fade-up" : "opacity-0"
-        }`}
+        className={`flex flex-col gap-8 items-center sm:text-md md:text-xl ${row2Visible ? "animate-fade-up" : "opacity-0"
+          }`}
       >
         <div className="flex-1 text-center">
-          <Image src="/images/welcome/emblem2.png" alt="Couple" width={300} height={300} />
+          <Image
+            src="/images/welcome/emblem2.png"
+            alt="Couple"
+            width={300}
+            height={300}
+          />
         </div>
         <div className="flex-1 text-center md:text-left">
           <p>Kính Mời quý khách đến dự tiệc cưới của chúng tôi</p>
         </div>
       </div>
 
-      {/* Row 3: Center Image */}
+      {/* Row 3 */}
       <div
         ref={row3Ref}
-        className={`flex justify-center ${
-          row3Visible ? "animate-fade-up" : "opacity-0"
-        }`}
+        className={`flex justify-center ${row3Visible ? "animate-fade-up" : "opacity-0"
+          }`}
       >
-        <Image src="/images/welcome/Horizontal_Name_black.png" alt="Decorative" width={400} height={200}
-        className="md:w-2xl" />
+        <Image
+          src="/images/welcome/Horizontal_Name_black.png"
+          alt="Decorative"
+          width={400}
+          height={200}
+          className="md:w-2xl"
+        />
       </div>
 
-      {/* Row 4: Time & Date */}
+      {/* Row 4 */}
       <div
         ref={row4Ref}
-        className={`flex text-lg md:text-3xl flex-row justify-between gap-1 text-center ${
-          row4Visible ? "animate-fade-up" : "opacity-0"
-        }`}
+        className={`flex text-lg md:text-3xl flex-row justify-between gap-1 text-center ${row4Visible ? "animate-fade-up" : "opacity-0"
+          }`}
       >
-        <div className="flex-1 flex items-center text-xl md:text-4xl justify-center  border-r-2 border-primary">
+        <div className="flex-1 flex items-center text-xl md:text-4xl justify-center border-r-2 border-primary">
           <p>10 giờ</p>
         </div>
-        <div className="flex-1 text-5xl md:text-6xl ">
+        <div className="flex-1 text-5xl md:text-6xl">
           <p>28</p>
           <p>12</p>
           <p>25</p>
@@ -94,12 +99,14 @@ export default function Invitation() {
       {/* Button */}
       <div className="text-center text-md md:text-2xl mt-10 mb-6">
         <button
-          onClick={() =>
-            document.getElementById("envelope")?.scrollIntoView({ behavior: "smooth" })
-          }
-          className={`px-6 py-3 text-primary bg-background border-2 border-primary transition-colors duration-100 hover:bg-primary hover:text-background ${
-            showButton ? "animate-fade-up" : "opacity-0"
-          }`}
+          onClick={() => {
+            window.open(
+              "https://maps.app.goo.gl/7ijFECQQeVUEfCxK6",
+              "_blank"
+            );
+          }}
+          className={`px-6 py-3 text-primary bg-background border-2 border-primary transition-colors duration-100 hover:bg-primary hover:text-background ${showButton ? "animate-fade-up" : "opacity-0"
+            }`}
         >
           Địa Điểm
         </button>
