@@ -18,7 +18,7 @@ export default function Hero({ coupleName, date, location }: HeroProps) {
       className="relative h-screen flex flex-col items-center justify-center text-center"
     >
       <Image
-        src="/images/hero-background.jpg"
+        src="/images/hero-background.webp"
         alt="Hero Background"
         fill
         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -39,7 +39,7 @@ export default function Hero({ coupleName, date, location }: HeroProps) {
 
         {/* Couple name image */}
         <Image
-          src="/images/couple-name.png"
+          src="/images/couple-name.webp"
           alt={coupleName}
           width={400}
           height={100}

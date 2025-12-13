@@ -13,7 +13,7 @@ export default function LocationCard() {
         {/* Middle: Image */}
         <div className="w-full max-w-md relative overflow-hidden shadow-lg ">
           <Image
-            src="/images/location-background.jpg"
+            src="/images/location-background.webp"
             alt="Map to Wedding Location"
             width={800}
             height={600}

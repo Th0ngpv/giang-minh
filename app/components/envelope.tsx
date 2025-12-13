@@ -54,7 +54,7 @@ useEffect(() => {
     >
       {/* Decorations */}
       <Image
-        src="/images/envelope/goldflower.png"
+        src="/images/envelope/goldflower.webp"
         alt="Decoration"
         width={220}
         height={220}
@@ -68,7 +68,7 @@ useEffect(() => {
       />
 
       <Image
-        src="/images/envelope/goldflower.png"
+        src="/images/envelope/goldflower.webp"
         alt="Decoration"
         width={220}
         height={220}
@@ -122,7 +122,7 @@ useEffect(() => {
         >
           <div className="relative aspect-2/3 h-[50vh] lg:h-[70vh] w-auto">
             <Image
-              src="/images/envelope/AOI_7396.jpg"
+              src="/images/envelope/AOI_7396.webp"
               alt="Chú Rể Hoàng Giang"
               fill
               className="object-cover rounded-lg shadow-lg"
@@ -156,7 +156,7 @@ useEffect(() => {
         >
           <div className="relative aspect-2/3 h-[50vh] lg:h-[70vh] w-auto">
             <Image
-              src="/images/envelope/DSC_4682.jpg"
+              src="/images/envelope/DSC_4682.webp"
               alt="Cô Dâu Tuệ Minh"
               fill
               className="object-cover rounded-lg shadow-lg"
@@ -210,7 +210,7 @@ useEffect(() => {
           >
 
             <Image
-              src="/images/envelope/qr.png"
+              src="/images/envelope/qr.webp"
               alt="QR Code"
               width={250}
               height={250}

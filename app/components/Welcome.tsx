@@ -51,7 +51,7 @@ export default function Invitation() {
       >
         <div className="flex-1 text-center">
           <Image
-            src="/images/welcome/emblem2.png"
+            src="/images/welcome/emblem2.webp"
             alt="Couple"
             width={300}
             height={300}
@@ -69,7 +69,7 @@ export default function Invitation() {
           }`}
       >
         <Image
-          src="/images/welcome/Horizontal_Name_black.png"
+          src="/images/welcome/Horizontal_Name_black.webp"
           alt="Decorative"
           width={400}
           height={200}
