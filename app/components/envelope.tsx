@@ -77,7 +77,7 @@ export default function CoupleRow() {
                 : "opacity-0 translate-y-6"
             }`}
         >
-          Where two hearts beat at once
+          When two hearts beat at once
         </div>
 
         <div
@@ -181,7 +181,7 @@ export default function CoupleRow() {
             </button>
 
             <Image
-              src="/images/qr-code.png"
+              src="/images/qr.png"
               alt="QR Code"
               width={250}
               height={250}
