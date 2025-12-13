@@ -30,7 +30,7 @@ export default function LocationCard() {
 
       {/* Button */}
       <div className="mt-8 text-center">
-        <button className="px-6 py-3 bg-primary hover:bg-primary transition text-background ">
+        <button className="px-6 py-3 bg-primary hover:bg-primary transition text-background md:text-2xl md:px-10 md:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl">
           Get Directions
         </button>
       </div>

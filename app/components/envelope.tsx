@@ -175,7 +175,7 @@ export default function CoupleRow() {
       <button
         onClick={() => setOpen(true)}
         className="relative z-10 mt-4 px-10 py-3 border border-white/70 text-white
-          font-playfair text-lg rounded-full transition-all duration-300 ease-out
+          font-playfair text-xl md:text-2xl rounded-full transition-all duration-300 ease-out
           hover:bg-white hover:text-[#01321f]
           hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
       >
