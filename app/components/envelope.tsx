@@ -18,21 +18,21 @@ export default function CoupleRow() {
   const [showWifeText, setShowWifeText] = useState(false);
 
   // 🔹 Master animation sequence
-useEffect(() => {
-  if (!sectionVisible) return;
+  useEffect(() => {
+    if (!sectionVisible) return;
 
-  const t1 = setTimeout(() => setShowHusbandImage(true), 100);
-  const t2 = setTimeout(() => setShowHusbandText(true), 900);
-  const t3 = setTimeout(() => setShowWifeImage(true), 1100);
-  const t4 = setTimeout(() => setShowWifeText(true), 1900);
+    const t1 = setTimeout(() => setShowHusbandImage(true), 100);
+    const t2 = setTimeout(() => setShowHusbandText(true), 900);
+    const t3 = setTimeout(() => setShowWifeImage(true), 1100);
+    const t4 = setTimeout(() => setShowWifeText(true), 1900);
 
-  return () => {
-    clearTimeout(t1);
-    clearTimeout(t2);
-    clearTimeout(t3);
-    clearTimeout(t4);
-  };
-}, [sectionVisible]);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearTimeout(t4);
+    };
+  }, [sectionVisible]);
 
   // Modal animation
   useEffect(() => {
@@ -60,10 +60,9 @@ useEffect(() => {
         height={220}
         className={`absolute -bottom-1/12 -left-1/12 rotate-90 z-0 pointer-events-none md:w-1/4
           transition-all duration-1000 ease-out
-          ${
-            headerVisible
-              ? "opacity-100 scale-100 translate-x-0 translate-y-0"
-              : "opacity-0 scale-75 -translate-x-10 translate-y-10"
+          ${headerVisible
+            ? "opacity-100 scale-100 translate-x-0 translate-y-0"
+            : "opacity-0 scale-75 -translate-x-10 translate-y-10"
           }`}
       />
 
@@ -74,10 +73,9 @@ useEffect(() => {
         height={220}
         className={`absolute -top-1/12 -right-1/12 rotate-270 z-0 pointer-events-none md:w-1/4
           transition-all duration-1000 ease-out delay-200
-          ${
-            headerVisible
-              ? "opacity-100 scale-100 translate-x-0 translate-y-0"
-              : "opacity-0 scale-75 translate-x-10 -translate-y-10"
+          ${headerVisible
+            ? "opacity-100 scale-100 translate-x-0 translate-y-0"
+            : "opacity-0 scale-75 translate-x-10 -translate-y-10"
           }`}
       />
 
@@ -86,10 +84,9 @@ useEffect(() => {
         <div
           className={`text-white font-playfair text-4xl md:text-5xl
             transition-all duration-1000 ease-out
-            ${
-              headerVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-6"
+            ${headerVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-6"
             }`}
         >
           When two hearts beat at once
@@ -98,10 +95,9 @@ useEffect(() => {
         <div
           className={`text-white/80 font-montserrat text-sm sm:text-base md:text-lg
             transition-all duration-1000 ease-out delay-200
-            ${
-              headerVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-6"
+            ${headerVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-6"
             }`}
         >
           They create a bond strong enough to last forever
@@ -114,10 +110,9 @@ useEffect(() => {
         <div
           className={`relative flex flex-col items-center justify-center
             transition-all duration-1000 ease-out
-            ${
-              showHusbandImage
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-24 opacity-0"
+            ${showHusbandImage
+              ? "opacity-100 translate-x-0 rotate-0"
+              : "opacity-0 -translate-x-16 -rotate-12"
             }`}
         >
           <div className="relative aspect-2/3 h-[50vh] lg:h-[70vh] w-auto">
@@ -133,10 +128,9 @@ useEffect(() => {
               className={`absolute bottom-4 left-1/2 -translate-x-1/2 text-center
                 text-white font-playfair text-2xl sm:text-3xl md:text-4xl drop-shadow-lg leading-tight
                 transition-all duration-700 ease-out
-                ${
-                  showHusbandText
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-4"
+                ${showHusbandText
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
                 }`}
             >
               <span className="font-imperial">Chú Rể</span> <br /> Hoàng Giang
@@ -148,10 +142,9 @@ useEffect(() => {
         <div
           className={`relative flex flex-col items-center justify-center
             transition-all duration-1000 ease-out
-            ${
-              showWifeImage
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-24 opacity-0"
+            ${showWifeImage
+              ? "opacity-100 translate-x-0 rotate-0"
+              : "opacity-0 -translate-x-16 -rotate-12"
             }`}
         >
           <div className="relative aspect-2/3 h-[50vh] lg:h-[70vh] w-auto">
@@ -167,10 +160,9 @@ useEffect(() => {
               className={`absolute bottom-4 left-1/2 -translate-x-1/2 text-center
                 text-white font-playfair text-2xl sm:text-3xl md:text-4xl drop-shadow-lg leading-tight
                 transition-all duration-700 ease-out
-                ${
-                  showWifeText
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-4"
+                ${showWifeText
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
                 }`}
             >
               <span className="font-imperial">Cô Dâu</span> <br /> Tuệ Minh
@@ -202,10 +194,9 @@ useEffect(() => {
           <div
             className={`relative z-10 bg-white rounded-2xl p-5 py-8 max-w-sm w-[90%] text-center
               transition-all duration-300 ease-out
-              ${
-                animate
-                  ? "opacity-100 translate-y-0 scale-100"
-                  : "opacity-0 translate-y-6 scale-95"
+              ${animate
+                ? "opacity-100 translate-y-0 scale-100"
+                : "opacity-0 translate-y-6 scale-95"
               }`}
           >
 
