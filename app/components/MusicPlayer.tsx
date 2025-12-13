@@ -15,7 +15,7 @@ export default function MusicPlayer() {
       audioRef.current.play();
     }
 
-    setPlaying(playing);
+    setPlaying(!playing);
   };
 
   return (
@@ -28,8 +28,8 @@ export default function MusicPlayer() {
 
       <button
         onClick={toggleMusic}
-        className="fixed bottom-5 right-5 z-50 rounded-full px-3 py-2
-                   bg-primary opacity-90 text-background shadow-lg"
+        className="fixed bottom-5 right-5 z-50 rounded-full px-4 py-3
+                   bg-primary opacity- text-background shadow-lg"
       >
         {playing ? "🔊" : "🔈"}
       </button>
