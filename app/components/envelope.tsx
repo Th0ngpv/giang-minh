@@ -6,20 +6,38 @@ import useInView from "@/app/hooks/useInView";
 
 export default function CoupleRow() {
   const { ref: headerRef, isVisible: headerVisible } = useInView();
-  const { ref: husbandRef, isVisible: husbandVisible } = useInView();
-  const { ref: wifeRef, isVisible: wifeVisible } = useInView();
+  const { ref: triggerRef, isVisible: sectionVisible } = useInView();
 
   const [open, setOpen] = useState(false);
   const [animate, setAnimate] = useState(false);
 
-  // trigger modal animation AFTER mount
+  // 🔹 Animation steps
+  const [showHusbandImage, setShowHusbandImage] = useState(false);
+  const [showHusbandText, setShowHusbandText] = useState(false);
+  const [showWifeImage, setShowWifeImage] = useState(false);
+  const [showWifeText, setShowWifeText] = useState(false);
+
+  // 🔹 Master animation sequence
+useEffect(() => {
+  if (!sectionVisible) return;
+
+  const t1 = setTimeout(() => setShowHusbandImage(true), 100);
+  const t2 = setTimeout(() => setShowHusbandText(true), 900);
+  const t3 = setTimeout(() => setShowWifeImage(true), 1100);
+  const t4 = setTimeout(() => setShowWifeText(true), 1900);
+
+  return () => {
+    clearTimeout(t1);
+    clearTimeout(t2);
+    clearTimeout(t3);
+    clearTimeout(t4);
+  };
+}, [sectionVisible]);
+
+  // Modal animation
   useEffect(() => {
     if (!open) return;
-
-    const id = requestAnimationFrame(() => {
-      setAnimate(true);
-    });
-
+    const id = requestAnimationFrame(() => setAnimate(true));
     return () => cancelAnimationFrame(id);
   }, [open]);
 
@@ -30,12 +48,13 @@ export default function CoupleRow() {
 
   return (
     <section
+      ref={triggerRef}
       className="relative py-10 px-4 flex flex-col items-center gap-12 overflow-hidden"
       style={{ backgroundColor: "#01321f" }}
     >
-      {/* 🔸 Bottom Left Decoration */}
+      {/* Decorations */}
       <Image
-        src="/images/decor/goldflower.png"
+        src="/images/envelope/goldflower.png"
         alt="Decoration"
         width={220}
         height={220}
@@ -48,9 +67,8 @@ export default function CoupleRow() {
           }`}
       />
 
-      {/* 🔸 Top Right Decoration */}
       <Image
-        src="/images/decor/goldflower.png"
+        src="/images/envelope/goldflower.png"
         alt="Decoration"
         width={220}
         height={220}
@@ -63,11 +81,8 @@ export default function CoupleRow() {
           }`}
       />
 
-      {/* Top Text */}
-      <div
-        ref={headerRef}
-        className="relative z-10 text-center space-y-2"
-      >
+      {/* Header */}
+      <div ref={headerRef} className="relative z-10 text-center space-y-2">
         <div
           className={`text-white font-playfair text-4xl md:text-5xl
             transition-all duration-1000 ease-out
@@ -93,51 +108,71 @@ export default function CoupleRow() {
         </div>
       </div>
 
-      {/* Husband & Wife */}
+      {/* Couple */}
       <div className="relative z-10 flex flex-col md:flex-row gap-16 md:gap-32 items-center justify-center w-full">
+        {/* Husband */}
         <div
-          ref={husbandRef}
-          className={`relative flex flex-col items-center justify-center transition-transform duration-1000 ease-out transform
+          className={`relative flex flex-col items-center justify-center
+            transition-all duration-1000 ease-out
             ${
-              husbandVisible
+              showHusbandImage
                 ? "translate-x-0 opacity-100"
-                : "-translate-x-20 opacity-0"
+                : "-translate-x-24 opacity-0"
             }`}
         >
           <div className="relative aspect-2/3 h-[50vh] lg:h-[70vh] w-auto">
             <Image
-              src="/images/preWed/AOI_7396.jpg"
+              src="/images/envelope/AOI_7396.jpg"
               alt="Chú Rể Hoàng Giang"
               fill
               className="object-cover rounded-lg shadow-lg"
             />
             <div className="absolute inset-0 bg-black/20 rounded-lg pointer-events-none" />
 
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center text-white font-playfair text-2xl sm:text-3xl md:text-4xl drop-shadow-lg leading-tight">
+            <div
+              className={`absolute bottom-4 left-1/2 -translate-x-1/2 text-center
+                text-white font-playfair text-2xl sm:text-3xl md:text-4xl drop-shadow-lg leading-tight
+                transition-all duration-700 ease-out
+                ${
+                  showHusbandText
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                }`}
+            >
               <span className="font-imperial">Chú Rể</span> <br /> Hoàng Giang
             </div>
           </div>
         </div>
 
+        {/* Wife */}
         <div
-          ref={wifeRef}
-          className={`relative flex flex-col items-center justify-center transition-transform duration-1000 ease-out transform
+          className={`relative flex flex-col items-center justify-center
+            transition-all duration-1000 ease-out
             ${
-              wifeVisible
+              showWifeImage
                 ? "translate-x-0 opacity-100"
-                : "translate-x-20 opacity-0"
+                : "-translate-x-24 opacity-0"
             }`}
         >
           <div className="relative aspect-2/3 h-[50vh] lg:h-[70vh] w-auto">
             <Image
-              src="/images/preWed/DSC_4682.jpg"
+              src="/images/envelope/DSC_4682.jpg"
               alt="Cô Dâu Tuệ Minh"
               fill
               className="object-cover rounded-lg shadow-lg"
             />
             <div className="absolute inset-0 bg-black/20 rounded-lg pointer-events-none" />
 
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center text-white font-playfair text-2xl sm:text-3xl md:text-4xl drop-shadow-lg leading-tight">
+            <div
+              className={`absolute bottom-4 left-1/2 -translate-x-1/2 text-center
+                text-white font-playfair text-2xl sm:text-3xl md:text-4xl drop-shadow-lg leading-tight
+                transition-all duration-700 ease-out
+                ${
+                  showWifeText
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                }`}
+            >
               <span className="font-imperial">Cô Dâu</span> <br /> Tuệ Minh
             </div>
           </div>
@@ -155,7 +190,7 @@ export default function CoupleRow() {
         Chung vui
       </button>
 
-      {/* 🌿 Popup Modal */}
+      {/* Modal */}
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div
@@ -173,15 +208,9 @@ export default function CoupleRow() {
                   : "opacity-0 translate-y-6 scale-95"
               }`}
           >
-            <button
-              onClick={closeModal}
-              className="absolute top-3 right-3 text-gray-500 hover:text-black text-xl"
-            >
-              x
-            </button>
 
             <Image
-              src="/images/qr.png"
+              src="/images/envelope/qr.png"
               alt="QR Code"
               width={250}
               height={250}
