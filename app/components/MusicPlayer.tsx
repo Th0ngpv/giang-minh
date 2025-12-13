@@ -15,7 +15,7 @@ export default function MusicPlayer() {
       audioRef.current.play();
     }
 
-    setPlaying(!playing);
+    setPlaying(playing);
   };
 
   return (
