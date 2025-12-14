@@ -5,6 +5,7 @@ import Envelope from "@/app/components/envelope";
 import Gallery from "@/app/components/gallery";
 import MusicPlayer from "@/app/components/MusicPlayer";
 import AttendanceCounter from "@/app/components/AttendanceCounter";
+import WishSection from "@/app/components/WishSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Envelope />
       <Countdown weddingDate="2025-12-28T09:00:00" />
       <AttendanceCounter />
+      <WishSection />
       <Gallery />
     </main>
   );
