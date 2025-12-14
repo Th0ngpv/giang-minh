@@ -114,7 +114,7 @@ export default function WishSection() {
 
                 {!loading && wishes.length === 0 && (
                     <p className="text-center text-muted-foreground">
-                        Chưa có lời chúc nào 💭
+                        hãy gửi lời chúc đầu tiên nhé!
                     </p>
                 )}
 

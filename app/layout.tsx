@@ -39,7 +39,30 @@ const imperialScript = Imperial_Script({
 
 export const metadata: Metadata = {
   title: "Wedding of Giang & Minh",
-  description: "A celebration of love — Giang & Minh's wedding website.",
+  description: "Trân trọng kính mời bạn đến dự lễ cưới của Giang & Minh",
+
+  openGraph: {
+    title: "Wedding of Giang & Minh",
+    description: "Trân trọng kính mời bạn đến dự lễ cưới của Giang & Minh",
+    url: "https://giang-minh.vercel.app",
+    siteName: "Giang & Minh Wedding",
+    images: [
+      {
+        url: "https://giang-minh.vercel.app/images/hero-background.webp",
+        width: 1200,
+        height: 630,
+        alt: "Wedding of Giang & Minh",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Wedding of Giang & Minh",
+    description: "Trân trọng kính mời bạn đến dự lễ cưới của Giang & Minh",
+    images: ["https://giang-minh.vercel.app/images/hero-background.webp"],
+  },
 };
 
 

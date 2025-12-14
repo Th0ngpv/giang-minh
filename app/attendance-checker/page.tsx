@@ -1,44 +1,33 @@
-"use client";
+// app/attendance-checker/page.tsx
+import AttendanceChecker from "@/app/attendance-checker/AttendanceCheckerClient";
 
-import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
+export const metadata = {
+  title: "Xác Nhận Tham Dự | Giang & Minh",
+  description: "Xem tổng số khách mời tham dự lễ cưới của Giang & Minh",
+  openGraph: {
+    title: "Xác Nhận Tham Dự | Giang & Minh",
+    description: "Xem tổng số khách mời tham dự lễ cưới của Giang & Minh",
+    url: "https://giang-minh.vercel.app/attendance-checker",
+    siteName: "Giang & Minh",
+    images: [
+      {
+        url: "https://giang-minh.vercel.app/images/envelope/DSC_4682.webp",
+        width: 800,
+        height: 600,
+        alt: "Attendance Checker",
+      },
+    ],
+    locale: "vi_VN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Xác Nhận Tham Dự | Giang & Minh",
+    description: "Xem tổng số khách mời tham dự lễ cưới của Giang & Minh",
+    images: ["https://giang-minh.vercel.app/images/envelope/DSC_4682.webp"],
+  },
+};
 
-export default function AttendanceChecker() {
-    const [total, setTotal] = useState<number | null>(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchTotal = async () => {
-            const { data, error } = await supabase
-                .from("attendance")
-                .select("count")
-                .eq("id", 1)
-                .single();
-
-            if (!error && data) {
-                setTotal(data.count);
-            }
-
-            setLoading(false);
-        };
-
-        fetchTotal();
-    }, []);
-
-    return (
-        <div className="min-h-screen flex items-center justify-center font-playfair text-center">
-            {loading ? (
-                <p className="text-xl">Đang tải...</p>
-            ) : (
-                <div className="flex flex-col items-center space-y-4">
-                    <p className="text-3xl text-primary">
-                        Tổng số người tham dự
-                    </p>
-                    <p className="text-8xl font-semibold text-primary">
-                        {total}
-                    </p>
-                </div>
-            )}
-        </div>
-    );
+export default function AttendancePage() {
+  return <AttendanceChecker />;
 }
