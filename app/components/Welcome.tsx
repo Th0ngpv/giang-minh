@@ -33,7 +33,7 @@ export default function Invitation() {
           <p className="sm:text-lg md:text-2xl"><b>Nhà Trai</b></p>
           <p>Ông Lương Đình Tuân</p>
           <p>Bà Trịnh Thị Ngọc Anh</p>
-          <p>Thôn 14, phường Tân Dân, Thanh Hóa</p>
+          <p>TDP 14, phường Tân Dân, Thanh Hóa</p>
         </div>
         <div className="flex-1 p-4 bg-white/10 text-center">
           <p className="sm:text-lg md:text-2xl"><b>Nhà Gái</b></p>
