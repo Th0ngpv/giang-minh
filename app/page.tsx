@@ -10,13 +10,10 @@ export default function Home() {
   return (
     <main className="bg-background">
       <MusicPlayer />
-
       <Hero
         coupleName="Hoàng Giang & Tue Minh"
-        date="9:00 PM, 28/12/2025"
-        location="Tư Gia"
-      />
-
+        date="9:00 AM, 28/12/2025"
+        location="Tư Gia" />
       <Welcome />
       <Envelope />
       <Countdown weddingDate="2025-12-28T09:00:00" />
