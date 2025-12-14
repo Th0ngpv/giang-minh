@@ -22,9 +22,15 @@ export default function AttendanceCounter() {
 
   return (
     <div className="text-center mt-5 space-y-4 font-playfair flex flex-col items-center gap-2">
-      <p className="text-3xl text-primary">
-        Số lượng người tham dự
-      </p>
+      {/* Title */}
+      <div className="text-center mb-5 mt-5">
+        <h2 className="text-6xl md:text-8xl font-delafield text-primary mb-1">
+          Attendance
+        </h2>
+        <p className="text-muted-foreground text-xl md:text-2xl">
+          Số lượng người tham dự
+        </p>
+      </div>
 
       <input
         type="number"
