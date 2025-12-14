@@ -101,7 +101,7 @@ export default function Invitation() {
         <button
           onClick={() => {
             window.open(
-              "https://maps.app.goo.gl/7ijFECQQeVUEfCxK6",
+              "https://maps.app.goo.gl/rdFarAU6j2JEzmik7",
               "_blank"
             );
           }}
