@@ -58,17 +58,6 @@ export default function Gallery() {
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* Center overlay image
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-20">
-          <Image
-            src="/images/Initial.webp"
-            alt="Initial"
-            width={350}
-            height={350}
-            className="w-md"
-          />
-        </div> */}
       </div>
     </section>
   );

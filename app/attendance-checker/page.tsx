@@ -11,7 +11,7 @@ export const metadata = {
     siteName: "Giang & Minh",
     images: [
       {
-        url: "https://giang-minh.vercel.app/images/envelope/DSC_4682.webp",
+        url: "https://giang-minh.vercel.app/images/attendance-checker.webp",
         width: 800,
         height: 600,
         alt: "Attendance Checker",
@@ -24,7 +24,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Xác Nhận Tham Dự | Giang & Minh",
     description: "Xem tổng số khách mời tham dự lễ cưới của Giang & Minh",
-    images: ["https://giang-minh.vercel.app/images/envelope/DSC_4682.webp"],
+    images: ["https://giang-minh.vercel.app/images/attendance-checker.webp"],
   },
 };
 
