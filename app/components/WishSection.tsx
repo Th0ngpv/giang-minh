@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import useInView from "@/app/hooks/useInView";
 
 type Wish = {
     id: number;
@@ -15,6 +16,7 @@ export default function WishSection() {
     const [wishes, setWishes] = useState<Wish[]>([]);
     const [loading, setLoading] = useState(true);
     const [submitting, setSubmitting] = useState(false);
+    const { ref, isVisible } = useInView({ threshold: 0.2 });
 
     // Fetch wishes
     useEffect(() => {
@@ -22,8 +24,7 @@ export default function WishSection() {
             const { data } = await supabase
                 .from("wishes")
                 .select("id, name, message, created_at")
-                
-                console.log("Number of wishes fetched:", data?.length);
+                .order("created_at", { ascending: false });
                 
 
             if (data) setWishes(data);
@@ -55,9 +56,11 @@ export default function WishSection() {
     };
 
     return (
-        <section className="relative py- px-4 max-w-4xl mx-auto z-10 font-playfair">
+        <section ref={ref} className="relative py- px-4 max-w-4xl mx-auto z-10 font-playfair">
             {/* Title */}
-            <div className="text-center mb-5 mt-5">
+            <div className={`text-center mb-5 mt-5 transition-all duration-1000 ease-out ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}>
                 <h2 className="text-6xl md:text-8xl font-delafield text-primary mb-4">
                     Wishes
                 </h2>
@@ -67,7 +70,9 @@ export default function WishSection() {
             </div>
 
             {/* Form */}
-            <div className="space-y-4 mb-5 bg-white/10 p-6 md:p-8 text-center">
+            <div className={`space-y-4 mb-5 bg-white/10 p-6 md:p-8 text-center transition-all duration-1000 ease-out delay-200 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}>
                 <input
                     type="text"
                     placeholder="Tên của bạn"
@@ -119,10 +124,15 @@ export default function WishSection() {
                 )}
 
                 <div className="space-y-4">
-                    {wishes.map((wish) => (
+                    {wishes.map((wish, index) => (
                         <div
                             key={wish.id}
-                            className="p-5 bg-white/10 border-l-4 border-primary"
+                            className={`p-5 bg-white/10 border-l-4 border-primary transition-all duration-700 ease-out ${
+                                isVisible 
+                                    ? "opacity-100 translate-x-0" 
+                                    : "opacity-0 -translate-x-6"
+                            }`}
+                            style={{ transitionDelay: `${300 + index * 100}ms` }}
                         >
                             <p className="text-lg text-primary font-semibold mb-1">
                                 {wish.name}
