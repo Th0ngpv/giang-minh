@@ -21,7 +21,7 @@ export default function Gallery() {
   ];
 
   return (
-    <section id="gallery" className="py-20 w-full relative">
+    <section id="gallery" className="pt-20 w-full relative">
       <h2 className="text-center text-8xl font-delafield mb-2">Our Gallery</h2>
       <p className="text-center text-md md:text-lg font-montserrat text-gray-700 mb-5 px-4">
         A collection of cherished moments from our journey together.
