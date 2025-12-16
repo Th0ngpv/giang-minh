@@ -109,7 +109,7 @@ export default function WishSection() {
                         overflow-y-auto
                         wishes-scroll
                     "
-                style={{ height: "100vh" }}
+                style={{ height: "50vh" }}
             >
                 {loading && (
                     <p className="text-center text-muted-foreground">
